@@ -52,6 +52,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\cat.cs" />
+     <Compile Include="Assets\Scripts\collition.cs" />
+     <Compile Include="Assets\Scripts\rat.cs" />
      <Compile Include="Assets\Scripts\shoot.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Users/mimit/Documents/CatchMeIFYouCat/CatchMeIfYouCat/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
