@@ -11,7 +11,7 @@ public class cat : MonoBehaviour {
   double min;
   double max;
   bool isGrounded;
-  bool isLeft;
+  public bool isLeft;
 	// Use this for initialization
 	void Start () {
 		moveSpeed = 8f;
@@ -33,39 +33,35 @@ public class cat : MonoBehaviour {
 
   //move the cat left and right
   void move() {
+    if(isLeft)
+      moveSpeed = -8f;
+    else
+      moveSpeed = 8f;
+
     if(transform.position.x <= min)
 	    transform.Translate(moveSpeed*(Input.GetAxis("Horizontal") + 1)*Time.deltaTime,jump + 0f,0f);
     else if(transform.position.x >= max)
       transform.Translate(moveSpeed*(Input.GetAxis("Horizontal") - 1)*Time.deltaTime,jump + 0f,0f);
     else
       transform.Translate(moveSpeed*Input.GetAxis("Horizontal")*Time.deltaTime,jump + 0f,0f);
-
-   /* if(Input.GetKeyDown("left"))
-      transform.rotation = Quaternion.Euler(0, 0, 180);
-    else if(Input.GetKeyDown("right"))
-      transform.rotation = Quaternion.Euler(0, 0, 0);*/
-
   }
 
-//make the cat shoot
+  //make the cat shoot
   void shoot() {
     if(Input.GetKeyDown("space")) {
       GameObject bulletpos = (GameObject)Instantiate (Player);
-      if(isLeft) {
-        bulletpos.transform.position = bullet.transform.position;
-      } else {
-        bulletpos.transform.position = bullet.transform.position;
-      }
-      
+      bulletpos.transform.position = bullet.transform.position;
     }
   }
 
   void directionFlag(){
     if(Input.GetKeyDown("left")) {
       isLeft = true;
+      transform.rotation = Quaternion.Euler(0, 0, 180); //change direction
     }
     if(Input.GetKeyDown("right")) {
-      isLeft = false;
+      isLeft = false; 
+      transform.rotation = Quaternion.Euler(0, 0, 0); //change direction
     }
   }
 
@@ -87,8 +83,7 @@ public class cat : MonoBehaviour {
         isGrounded = true;
       } else {
         isGrounded = true;
-      }
-      
+      }      
 		}
   }
 }

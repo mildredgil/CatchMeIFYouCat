@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\ChangeToHowToPlay.cs" />
      <Compile Include="Assets\Scripts\ChangeToIntro.cs" />
      <Compile Include="Assets\Scripts\rat.cs" />
+     <Compile Include="Assets\Scripts\ratShoot.cs" />
      <Compile Include="Assets\Scripts\shoot.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Users/mimit/Documents/CatchMeIFYouCat/CatchMeIfYouCat/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
