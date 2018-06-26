@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4648302992012532}
   - component: {fileID: 212670373432855872}
   - component: {fileID: 61561944888337746}
-  - component: {fileID: 114672391853445186}
   - component: {fileID: 50462972512135174}
   m_Layer: 0
   m_Name: ratBullet
@@ -88,17 +87,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114672391853445186
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1247345382170256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d09ab05a96e3c5143a118f806a16ced7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212670373432855872
 SpriteRenderer:
   m_ObjectHideFlags: 1
