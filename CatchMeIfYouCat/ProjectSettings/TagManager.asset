@@ -6,6 +6,7 @@ TagManager:
   tags:
   - floor
   - rat
+  - cat
   layers:
   - Default
   - TransparentFX

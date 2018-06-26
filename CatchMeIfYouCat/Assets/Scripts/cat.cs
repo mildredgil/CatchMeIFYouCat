@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class cat : MonoBehaviour {
   public GameObject bullet;
@@ -11,8 +12,15 @@ public class cat : MonoBehaviour {
   double min;
   double max;
   bool isGrounded;
+  public bool isLeft;
+  
+  public Text enemiesTxt;
+
+  public static int enemies;
 	// Use this for initialization
 	void Start () {
+    enemiesTxt.text = "Enemies: ";
+    enemies = 0;
 		moveSpeed = 8f;
     jump = 0;
     isGrounded = false;
@@ -27,17 +35,26 @@ public class cat : MonoBehaviour {
     move();
     jumping();
     shoot();
+    directionFlag();
+    enemiesTxt.text = "Enemies: " + enemies;
 	}
+
+  //move the cat left and right
   void move() {
+    if(isLeft)
+      moveSpeed = -8f;
+    else
+      moveSpeed = 8f;
+
     if(transform.position.x <= min)
 	    transform.Translate(moveSpeed*(Input.GetAxis("Horizontal") + 1)*Time.deltaTime,jump + 0f,0f);
     else if(transform.position.x >= max)
       transform.Translate(moveSpeed*(Input.GetAxis("Horizontal") - 1)*Time.deltaTime,jump + 0f,0f);
     else
       transform.Translate(moveSpeed*Input.GetAxis("Horizontal")*Time.deltaTime,jump + 0f,0f);
-//      Debug.Log(Input.GetAxis("Horizontal"));
   }
 
+  //make the cat shoot
   void shoot() {
     if(Input.GetKeyDown("space")) {
       GameObject bulletpos = (GameObject)Instantiate (Player);
@@ -45,17 +62,36 @@ public class cat : MonoBehaviour {
     }
   }
 
+  void directionFlag(){
+    if(Input.GetKeyDown("left")) {
+      isLeft = true;
+      transform.rotation = Quaternion.Euler(0, 0, 180); //change direction
+    }
+    if(Input.GetKeyDown("right")) {
+      isLeft = false; 
+      transform.rotation = Quaternion.Euler(0, 0, 0); //change direction
+    }
+  }
+
+  //jump
   void jumping() {
     if(Input.GetKeyDown("up") && isGrounded) {
       jump = 2;
       isGrounded = false;
+      transform.rotation = Quaternion.Euler(0, 0, 0);
     } else {
       jump = 0;
     } 
   }
+
+//check if the cat is on the floor
   void OnCollisionEnter2D(Collision2D col){
 		if(col.gameObject.tag == "floor" && isGrounded == false) {
-      isGrounded = true;
+      if(isLeft) {
+        isGrounded = true;
+      } else {
+        isGrounded = true;
+      }      
 		}
   }
 }

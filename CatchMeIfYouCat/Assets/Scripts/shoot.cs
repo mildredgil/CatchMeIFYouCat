@@ -7,8 +7,11 @@ float speed;
 float distance;
 	// Use this for initialization
 	void Start () {
-		speed = 15f;
-    distance = transform.position.x + 3;
+		 if (GameObject.Find("cat").GetComponent<cat>().isLeft) {
+      speed = -15f;      
+    } else {
+      speed = 15f;      
+    }
 	}
 	
 	// Update is called once per frame
@@ -20,15 +23,18 @@ float distance;
 
     Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2 (1 , 1 ));
     
-    if(transform.position.x > max.x || position.x >= distance) {
+    if(transform.position.x > max.x) {
       Destroy(gameObject);
+    } else {
+      Destroy(gameObject, 0.1f);
     }
+    
 	}
 
   void OnCollisionEnter2D(Collision2D col) {
-    Debug.Log("here");
 		if(col.gameObject.tag == "rat") {
       Destroy(col.gameObject);
-		}
+      cat.enemies++;
+		} 
   }
 }
