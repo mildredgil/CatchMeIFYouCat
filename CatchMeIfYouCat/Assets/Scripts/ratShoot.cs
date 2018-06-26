@@ -7,8 +7,8 @@ public class ratShoot : MonoBehaviour {
   float speed;
   int direction;
 
-	// Use this for initialization
-	void Start () {
+  // Use this for initialization
+  void Start () {
     direction = Random.Range(-1, 1);
     if(direction == 0) 
       direction = -1;

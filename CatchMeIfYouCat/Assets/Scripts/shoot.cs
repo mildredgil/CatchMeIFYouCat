@@ -8,11 +8,9 @@ float distance;
 	// Use this for initialization
 	void Start () {
 		 if (GameObject.Find("cat").GetComponent<cat>().isLeft) {
-      speed = -15f;
-      
+      speed = -15f;      
     } else {
-      speed = 15f;
-      
+      speed = 15f;      
     }
 	}
 	
@@ -36,6 +34,7 @@ float distance;
   void OnCollisionEnter2D(Collision2D col) {
 		if(col.gameObject.tag == "rat") {
       Destroy(col.gameObject);
-		}
+      cat.enemies++;
+		} 
   }
 }
