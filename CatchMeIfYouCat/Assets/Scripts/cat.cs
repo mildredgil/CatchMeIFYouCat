@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class cat : MonoBehaviour {
   public GameObject bullet;
@@ -12,8 +13,14 @@ public class cat : MonoBehaviour {
   double max;
   bool isGrounded;
   public bool isLeft;
+  
+  public Text enemiesTxt;
+
+  public static int enemies;
 	// Use this for initialization
 	void Start () {
+    enemiesTxt.text = "Enemies: ";
+    enemies = 0;
 		moveSpeed = 8f;
     jump = 0;
     isGrounded = false;
@@ -29,6 +36,7 @@ public class cat : MonoBehaviour {
     jumping();
     shoot();
     directionFlag();
+    enemiesTxt.text = "Enemies: " + enemies;
 	}
 
   //move the cat left and right
