@@ -9,12 +9,11 @@ public class ratShoot : MonoBehaviour {
 
   // Use this for initialization
   void Start () {
-    direction = Random.Range(-1, 1);
+    /*direction = Random.Range(-1, 1);
     if(direction == 0) 
       direction = -1;
-    else
-      direction = 1;
-
+    else*/
+    direction = 1;
     speed = 10f * direction;
 	}
 	
@@ -37,7 +36,10 @@ public class ratShoot : MonoBehaviour {
   void OnCollisionEnter2D(Collision2D col) {
 		if(col.gameObject.tag == "cat") {
       Debug.Log("cat -1!");
-      Destroy(gameObject);
+      GameManager.checkIfLoose();
+      GameManager.health--;
 		}
+    if(col.gameObject.tag != "rat")
+      Destroy(gameObject);
   }
 }

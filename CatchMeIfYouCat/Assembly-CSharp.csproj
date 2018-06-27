@@ -52,11 +52,16 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\cat.cs" />
+     <Compile Include="Assets\Scripts\ChangeScene.cs" />
      <Compile Include="Assets\Scripts\ChangeToHowToPlay.cs" />
      <Compile Include="Assets\Scripts\ChangeToIntro.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\rat.cs" />
      <Compile Include="Assets\Scripts\ratShoot.cs" />
+     <Compile Include="Assets\Scripts\ratShootLeft.cs" />
      <Compile Include="Assets\Scripts\shoot.cs" />
+     <Compile Include="Assets\Scripts\spawnRats.cs" />
+     <Compile Include="Assets\Scripts\Timer.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Users/mimit/Documents/CatchMeIFYouCat/CatchMeIfYouCat/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>

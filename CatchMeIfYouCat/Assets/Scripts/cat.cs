@@ -16,11 +16,10 @@ public class cat : MonoBehaviour {
   
   public Text enemiesTxt;
 
-  public static int enemies;
+  public Animation anim;
 	// Use this for initialization
 	void Start () {
     enemiesTxt.text = "Enemies: ";
-    enemies = 0;
 		moveSpeed = 8f;
     jump = 0;
     isGrounded = false;
@@ -36,7 +35,7 @@ public class cat : MonoBehaviour {
     jumping();
     shoot();
     directionFlag();
-    enemiesTxt.text = "Enemies: " + enemies;
+    enemiesTxt.text = "Enemies: " + GameManager.rats;
 	}
 
   //move the cat left and right
@@ -65,7 +64,7 @@ public class cat : MonoBehaviour {
   void directionFlag(){
     if(Input.GetKeyDown("left")) {
       isLeft = true;
-      transform.rotation = Quaternion.Euler(0, 0, 180); //change direction
+      transform.rotation = Quaternion.Euler(0, 180, 0); //change direction
     }
     if(Input.GetKeyDown("right")) {
       isLeft = false; 
@@ -78,7 +77,7 @@ public class cat : MonoBehaviour {
     if(Input.GetKeyDown("up") && isGrounded) {
       jump = 2;
       isGrounded = false;
-      transform.rotation = Quaternion.Euler(0, 0, 0);
+      //transform.rotation = Quaternion.Euler(0, 0, 0);
     } else {
       jump = 0;
     } 
