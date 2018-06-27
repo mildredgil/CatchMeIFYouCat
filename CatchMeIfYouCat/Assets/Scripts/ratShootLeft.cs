@@ -26,13 +26,15 @@ public class ratShootLeft : MonoBehaviour {
       Destroy(gameObject);
     } else {
       Destroy(gameObject, 0.5f);
-      Debug.Log("it must die!");
+      //Debug.Log("it must die!");
     }    
 	}
 
   void OnCollisionEnter2D(Collision2D col) {
 		if(col.gameObject.tag == "cat") {
       Debug.Log("cat -1!");
+      GameManager.checkIfLoose();
+      GameManager.health--;
 		}
     if(col.gameObject.tag != "rat")
       Destroy(gameObject);

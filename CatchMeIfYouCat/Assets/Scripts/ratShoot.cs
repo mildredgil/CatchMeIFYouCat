@@ -36,6 +36,8 @@ public class ratShoot : MonoBehaviour {
   void OnCollisionEnter2D(Collision2D col) {
 		if(col.gameObject.tag == "cat") {
       Debug.Log("cat -1!");
+      GameManager.checkIfLoose();
+      GameManager.health--;
 		}
     if(col.gameObject.tag != "rat")
       Destroy(gameObject);

@@ -33,8 +33,10 @@ float distance;
 
   void OnCollisionEnter2D(Collision2D col) {
 		if(col.gameObject.tag == "rat") {
-      Destroy(col.gameObject);
-      cat.enemies++;
+      col.gameObject.SetActive(false); 
+      col.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+      GameManager.rats ++;
+      GameManager.checkIfWin();
 		} 
   }
 }
