@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		timeLeft = 90;
     rats = 0;
-    health = 10;
+    health = 11;
     InvokeRepeating("count", 1, 1);
 	}
 	
