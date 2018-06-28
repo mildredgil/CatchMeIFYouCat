@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4648302992012532}
   - component: {fileID: 212670373432855872}
   - component: {fileID: 61561944888337746}
-  - component: {fileID: 114672391853445186}
   - component: {fileID: 50462972512135174}
   m_Layer: 0
   m_Name: ratBullet
@@ -38,7 +37,7 @@ Transform:
   m_GameObject: {fileID: 1247345382170256}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -22.709196, y: -3.5311892, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 0.06227701, y: 0.06227701, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -79,7 +78,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 11.67, y: 9.8}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -88,17 +87,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114672391853445186
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1247345382170256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d09ab05a96e3c5143a118f806a16ced7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212670373432855872
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -134,8 +122,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cb67faf477452f8479932835564fa43a, type: 3}
-  m_Color: {r: 0.6981132, g: 0.02963687, b: 0.05033327, a: 1}
+  m_Sprite: {fileID: 21300000, guid: dc3b0384fba8b3448be8bab981f3f6d5, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
