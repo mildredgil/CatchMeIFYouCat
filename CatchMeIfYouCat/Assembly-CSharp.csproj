@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\ChangeToHowToPlay.cs" />
      <Compile Include="Assets\Scripts\ChangeToIntro.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\healthManager.cs" />
      <Compile Include="Assets\Scripts\rat.cs" />
      <Compile Include="Assets\Scripts\ratShoot.cs" />
      <Compile Include="Assets\Scripts\ratShootLeft.cs" />

@@ -22,9 +22,9 @@ public class Timer : MonoBehaviour {
      int minutes = time % 60; 
 
      if(minutes < 10) {
-       timer.text = hour + ":0" + minutes;
+        timer.text = hour + ":0" + minutes;
      } else {
-       timer.text = hour + ":" + minutes;
+        timer.text = hour + ":" + minutes;
      }
 
      
