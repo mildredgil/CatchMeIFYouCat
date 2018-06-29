@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\ChangeToHowToPlay.cs" />
     <Compile Include="Assets\Scripts\ChangeToIntro.cs" />
     <Compile Include="Assets\Scripts\ChangeToPower.cs" />
+    <Compile Include="Assets\Scripts\ChangeToStory.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\healthManager.cs" />
     <Compile Include="Assets\Scripts\rat.cs" />
